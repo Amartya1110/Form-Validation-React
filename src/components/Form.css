@@ -1,8 +1,10 @@
 :root {
-    --input-wrapper-padding-left: 0.5rem;
+    --input-wrapper-padding: 0.5rem;
+    --input-wrapper-margin: 0.5rem;
     --show-password-svg-width: 1.5em;
     --show-password-svg-height: 1.5em;
     --toggle-password-visibility-padding: 0.3em;
+    --border-radius: 0.3em;
 }
 
 .form-wrapper form {
@@ -15,15 +17,15 @@
     background-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 0.6em 0.6em rgba(250, 250, 250, 0.6);
     
-    border-radius: 0.3em;
+    border-radius: var(--border-radius);
     padding: 2em;
 }
 
 .input-wrapper {
-    margin: 0.5em;
+    margin: var(--input-wrapper-margin);
     background-color: #15285764;
-    border-radius: 0.3em;
-    padding: var(--input-wrapper-padding-left);
+    border-radius: var(--border-radius);
+    padding: var(--input-wrapper-padding);
 }
 
 input {
@@ -40,7 +42,7 @@ input {
 .text-type-input>label {
     position: absolute;
     top: 50%;
-    left: var(--input-wrapper-padding-left);
+    left: var(--input-wrapper-padding);
     transform: translate(0%, -50%);
     transition: all 0.3s;
 }
@@ -70,7 +72,7 @@ input.focus-input + label {
 .toggle-password-visibility {
     position: absolute;
     top: 50%;
-    right: var(--input-wrapper-padding-left);
+    right: var(--input-wrapper-padding);
     transform: translate(0%, -50%);
     background-color: transparent;
     padding: var(--toggle-password-visibility-padding);
@@ -191,3 +193,30 @@ input.focus-input + label {
     align-items: center;
 }
 
+/* ========= Error Message Styles ========= */
+
+.form-group p.error-msg {
+    display: none;
+    opacity: 0;
+    color: #f97f94;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0 var(--input-wrapper-padding);
+    transition: all ease-in-out 1s;
+}
+
+.form-group:has(.input-wrapper>input[data-invalid="true"]) p.error-msg {
+    display: block;
+    opacity: 1;
+}
+
+/* =========== Register button styles  */
+
+.register-btn {
+    margin: var(--input-wrapper-margin);
+    padding: var(--input-wrapper-padding) 2em;
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #ec1035;
+}

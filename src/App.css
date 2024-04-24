@@ -6,9 +6,17 @@
     justify-content: center;
     align-items: center;
 
-    background-color: #313131;
+    /* background-color: #313131; */
 
     color: #ffffff;
+
+    padding-bottom: 2em;
+
+    background-color: #000000bf;
+    background-image: url("https://plus.unsplash.com/premium_photo-1684581214880-2043e5bc8b8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
 }
 
 .form-heading {
